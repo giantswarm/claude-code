@@ -1,0 +1,8 @@
+{
+    "name": "your-plugin-name",
+    "description": "Brief description of what your plugin does",
+    "version": "0.1.0",
+    "author": {
+        "name": "Giant Swarm GmbH"
+    }
+}

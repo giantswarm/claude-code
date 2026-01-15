@@ -1,0 +1,60 @@
+name: Validate Plugins
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Validate plugin.json schemas
+      run: |
+        echo "Validating plugin.json files..."
+        node shared/scripts/validate-schema.js
+
+    - name: Check for command conflicts
+      run: |
+        echo "Checking for command name conflicts..."
+        node shared/scripts/check-conflicts.js
+
+    - name: Verify plugin structure
+      run: |
+        echo "Verifying plugin directory structure..."
+        for plugin_dir in plugins/*/; do
+          plugin_name=$(basename "$plugin_dir")
+          echo "Checking $plugin_name..."
+
+          # Check for required files
+          if [ ! -f "$plugin_dir/.claude-plugin/plugin.json" ]; then
+            echo "❌ Error: Missing plugin.json in $plugin_name"
+            exit 1
+          fi
+
+          if [ ! -d "$plugin_dir/commands" ]; then
+            echo "⚠️  Warning: No commands directory in $plugin_name"
+          fi
+
+          echo "✅ $plugin_name structure is valid"
+        done
+
+    - name: Summary
+      if: success()
+      run: |
+        echo "✅ All validations passed!"
+        echo ""
+        echo "Summary:"
+        plugin_count=$(ls -d plugins/*/ 2>/dev/null | wc -l)
+        echo "  Plugins validated: $plugin_count"

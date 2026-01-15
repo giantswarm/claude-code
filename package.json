@@ -1,0 +1,25 @@
+{
+  "name": "claude-code-plugins",
+  "version": "1.0.0",
+  "description": "Internal Claude Code plugins for Giant Swarm platform engineers",
+  "private": true,
+  "scripts": {
+    "validate": "node shared/scripts/validate-schema.js",
+    "check-conflicts": "node shared/scripts/check-conflicts.js",
+    "test": "npm run validate && npm run check-conflicts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "internal"
+  },
+  "keywords": [
+    "claude-code",
+    "plugins",
+    "giant-swarm"
+  ],
+  "author": "Giant Swarm GmbH",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
