@@ -2,12 +2,6 @@
 
 Claude Code plugins for Giant Swarm engineers.
 
-## Overview
-
-This repository contains a collection of Claude Code plugins designed to help Giant Swarm team members.
-
-To not overload the context, there are several plugins (see below).
-
 ## Plugins
 
 ### base
