@@ -6,7 +6,7 @@ Claude Code plugins for Giant Swarm engineers.
 
 This repository contains a collection of Claude Code plugins designed to help Giant Swarm team members.
 
-To not overlode the context, there are several plugins (see below).
+To not overload the context, there are several plugins (see below).
 
 ## Plugins
 
@@ -42,7 +42,13 @@ SRE tools and commands for Giant Swarm site reliability engineering
 
 ## Installation
 
-See [the installation docs](./docs/INSTALLATION.md) for setup instructions.
+Add this repository as a marketplace to Claude Code. In Claude code, execute:
+
+```nohighlight
+/plugin marketplaxce add giantswarm/claude-code
+```
+
+Then use the `/plugin` command to install, enable, disable plugins.
 
 ## Creating a new plugin
 
