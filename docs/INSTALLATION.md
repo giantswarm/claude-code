@@ -14,13 +14,10 @@ This guide explains how to install and use Giant Swarm Claude Code plugins.
 
 NOTE: This is experimental and makes use of the [marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) function in Claude Code.
 
-Try this in Claude Code:
-
-
-First, add the giantswarm marketplace:
+First, add this repository as a marketplace to Claude Code. Launch `claude` and execute this:
 
 ```
-/plugin marketplace add https://github.com/giantswarm/claude-code
+/plugin marketplace add giantswarm/claude-code
 ```
 
 Then install the plugins you want, for example:
@@ -28,6 +25,10 @@ Then install the plugins you want, for example:
 ```
 /plugin install base@giantswarm
 ```
+
+Alternatively you can navigate through the menus.
+
+**Recommended:** Activate auto-update for this marketplace.
 
 ### Git Clone
 

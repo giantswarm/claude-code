@@ -45,7 +45,7 @@ SRE tools and commands for Giant Swarm site reliability engineering
 Add this repository as a marketplace to Claude Code. In Claude code, execute:
 
 ```nohighlight
-/plugin marketplaxce add giantswarm/claude-code
+/plugin marketplace add giantswarm/claude-code
 ```
 
 Then use the `/plugin` command to install, enable, disable plugins.
