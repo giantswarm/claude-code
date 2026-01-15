@@ -325,16 +325,6 @@ Update the version in `plugin.json` when making changes.
 4. Request review from the Platform Engineering team
 5. After merge, the plugin is available to all team members
 
-## Plugin Ideas
-
-Some ideas for new plugins:
-- Kubernetes operations and debugging
-- Cloud provider-specific tools (AWS, Azure, GCP)
-- Incident response helpers
-- Deployment automation
-- Monitoring and alerting shortcuts
-- Documentation generators
-- Code review helpers
 
 ## Getting Help
 
