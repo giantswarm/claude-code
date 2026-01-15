@@ -8,75 +8,45 @@ This repository contains a collection of Claude Code plugins designed to help Gi
 
 To not overlode the context, there are several plugins (see below).
 
-## Available Plugins
+## Plugins
 
-### `base`
+### base
 
 A general purpose Claude Code plugin all Giant Swarm engineers should have installed.
 
 **Commands:**
 
-- `/gs-base:hello` - Greet the user
-- `/gs-base:init-github` - Set up GitHub MCP tools and confirm they're working
-- `/gs-base:init-circleci` - Set up CircleCI MCP tools and confirm they're working
+- `/gs-base:hello` - Greet the user with something unexpected
+- `/gs-base:init-github` - Initialize the GitHub MCP tools
+- `/gs-base:init-circleci` - Initialize the CircleCI MCP tools
+- `/gs-base:init-kubernetes` - Set up access to Kubernetes clusters
+- `/gs-base:init-search` - Set up search-mcp to access Docs, Intranet, and Handbook
 
 **Skills:**
 
-- **kubernetes**: Kubernetes best practices
+- **kubernetes**: To keep in mind when working with Kubernetes
+- **fluxcd**: Best practices when working with Flux CD at Giant Swarm
+- **software-engineering**: Software engineering base skills for Giant Swarm staff
+- **registries**: Working with container and OCI registries
 
----
+### sre
 
-### sre (gs-sre)
-**Version:** 0.1.0
-**Description:** SRE tools and commands for Giant Swarm site reliability engineering
+SRE skills for Giant Swarm site reliability engineering.
 
-**Location:** `plugins/sre/`
+**Skills:**
 
-**Commands:**
-- `incident-start` - Start incident response workflow and create incident document
-- `postmortem` - Generate postmortem document from incident notes
-- `debug-pod` - Debug a Kubernetes pod with comprehensive diagnostics
-- `check-alerts` - Investigate and triage active alerts
+- **giantswarm-platform**: Giant Swarm platform knowledge for SRE operations
+- **mcp-tools-reference**: MCP tools quick reference for Giant Swarm operations
 
 ---
 
 ## Installation
 
-See [INSTALLATION.md](./INSTALLATION.md) for detailed setup instructions.
-
-**Quick Start:**
-```bash
-# Clone this repository
-git clone <repository-url> claude-code-plugins
-
-# Or add as a submodule to your project
-git submodule add <repository-url> .claude-plugins
-```
+See [the installation docs](./docs/INSTALLATION.md) for setup instructions.
 
 ## Creating a New Plugin
 
 See [shared/README.md](./shared/README.md) for plugin development guidelines and the template structure.
-
-## Repository Structure
-
-```
-claude-code-plugins/
-├── plugins/           # All available plugins
-├── shared/           # Shared utilities and templates
-├── .github/          # CI/CD workflows
-└── docs/             # Additional documentation
-```
-
-## Contributing
-
-1. Create a new plugin using the template in `shared/templates/`
-2. Add your plugin to the `plugins/` directory
-3. Update this README with your plugin information
-4. Submit a pull request
-
-## License
-
-Internal use only - Giant Swarm GmbH
 
 ## Support
 
