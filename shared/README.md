@@ -335,6 +335,4 @@ Update the version in `plugin.json` when making changes.
 
 ## Resources
 
-- [Claude Code Documentation](https://docs.anthropic.com/claude/docs)
-- Main [README.md](../README.md)
-- [INSTALLATION.md](../INSTALLATION.md)
+- [Claude Code Documentation](https://code.claude.com/docs/en/plugins)

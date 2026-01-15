@@ -10,6 +10,25 @@ This guide explains how to install and use Giant Swarm Claude Code plugins.
 
 ## Installation Methods
 
+### Marketplace
+
+NOTE: This is experimental and makes use of the [marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) function in Claude Code.
+
+Try this in Claude Code:
+
+
+First, add the giantswarm marketplace:
+
+```
+/plugin marketplace add https://github.com/giantswarm/claude-code
+```
+
+Then install the plugins you want, for example:
+
+```
+/plugin install base@giantswarm
+```
+
 ### Git Clone
 
 Clone the repository to a local directory:
