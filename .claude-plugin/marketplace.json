@@ -3,16 +3,15 @@
   "owner": {
     "name": "Giant Swarm GmbH"
   },
-  "pluginRoot": "./plugins",
   "plugins": [
     {
       "name": "gs-base",
-      "source": "base",
+      "source": "./plugins/base",
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers"
     },
     {
       "name": "gs-sre",
-      "source": "sre",
+      "source": "./plugins/sre",
       "description": "SRE tools and commands for Giant Swarm site reliability engineering"
     }
   ]
