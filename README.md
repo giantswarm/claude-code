@@ -15,9 +15,11 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - `/gs-base:init-github` - Initialize the GitHub MCP tools
 - `/gs-base:init-kubernetes` - Set up access to Kubernetes clusters
 - `/gs-base:init-search` - Set up search-mcp to access Docs, Intranet, and Handbook
+- `/gs-base:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
 
 **Skills:**
 
+- **backstage**: The Backstage developer portal
 - **fluxcd**: Best practices when working with Flux CD at Giant Swarm
 - **kubernetes**: To keep in mind when working with Kubernetes
 - **registries**: Working with container and OCI registries
