@@ -9,12 +9,12 @@
   "plugins": [
     {
       "name": "gs-base",
-      "source": "./plugins/base",
+      "source": "./plugins/gs-base",
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers"
     },
     {
       "name": "gs-sre",
-      "source": "./plugins/sre",
+      "source": "./plugins/gs-sre",
       "description": "SRE tools and commands for Giant Swarm site reliability engineering"
     }
   ]
