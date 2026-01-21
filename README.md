@@ -4,7 +4,7 @@ Claude Code plugins for Giant Swarm engineers.
 
 ## Plugins
 
-### base
+### gs-base
 
 A general purpose Claude Code plugin for Giant Swarm platform engineers
 
@@ -25,7 +25,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - **registries**: Working with container and OCI registries
 - **software-engineering**: Software engineering base skills for Giant Swarm staff
 
-### sre
+### gs-sre
 
 SRE tools and commands for Giant Swarm site reliability engineering
 
