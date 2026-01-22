@@ -12,6 +12,7 @@ subscribe to the default branch instead. We structure this log by dates instead.
 
 - Added the `gs-product` plugin
 - Added general `CLAUDE.md` file for this repository
+- Added `password-manager` skill to `gs-base` plugin for 1Password CLI integration
 
 ### Changed
 
