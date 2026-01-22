@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 howver, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
 
+## Unreleased
+
+### Added
+
+- Added `password-manager` skill to `gs-base` plugin for password manager CLI integration
+
 ## 2026-01-24
 
 ### Changed

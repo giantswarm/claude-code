@@ -8,6 +8,9 @@
     "check-conflicts": "node shared/scripts/check-conflicts.js",
     "test": "npm run validate && npm run check-conflicts"
   },
+  "bin": {
+    "pwrun": "./shared/scripts/pwrun"
+  },
   "repository": {
     "type": "git",
     "url": "internal"

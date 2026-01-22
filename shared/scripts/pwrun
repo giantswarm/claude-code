@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# Select the installed password manager
+if command -v op >/dev/null 2>&1 && op account --help >/dev/null 2>&1; then
+  exec op run -- "$@"
+else
+  echo "pwrun: error: No usable password manager CLI found" >&2
+  exit 1
+fi
