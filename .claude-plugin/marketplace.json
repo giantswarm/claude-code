@@ -13,6 +13,11 @@
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers"
     },
     {
+      "name": "gs-product",
+      "source": "./plugins/gs-product",
+      "description": "Create high-quality GitHub issues following Giant Swarm patterns and standards"
+    },
+    {
       "name": "gs-sre",
       "source": "./plugins/gs-sre",
       "description": "SRE tools and commands for Giant Swarm site reliability engineering"

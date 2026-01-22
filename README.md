@@ -25,6 +25,22 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - **registries**: Working with container and OCI registries
 - **software-engineering**: Software engineering base skills for Giant Swarm staff
 
+### gs-product
+
+Create high-quality GitHub issues following Giant Swarm patterns and standards
+
+**Commands:**
+
+- `/gs-product:create-issue` - Create a high-quality GitHub issue following Giant Swarm patterns
+- `/gs-product:suggest-labels` - Suggest appropriate labels for a GitHub issue based on content
+- `/gs-product:validate-issue` - Validate an issue against Giant Swarm quality standards
+
+**Skills:**
+
+- **issue-patterns**: Giant Swarm issue patterns, types, and naming conventions
+- **label-taxonomy**: Giant Swarm GitHub label taxonomy and usage guidelines
+- **quality-standards**: Quality standards and validation criteria for Giant Swarm issues
+
 ### gs-sre
 
 SRE tools and commands for Giant Swarm site reliability engineering

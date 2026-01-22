@@ -52,6 +52,7 @@ function getAllPlugins(pluginsDir) {
   const entries = fs.readdirSync(pluginsDir, { withFileTypes: true });
   return entries
     .filter(entry => entry.isDirectory())
+    .filter(entry => !entry.name.startsWith('.')) // Exclude hidden directories
     .map(entry => ({
       path: path.join(pluginsDir, entry.name),
       dirName: entry.name
