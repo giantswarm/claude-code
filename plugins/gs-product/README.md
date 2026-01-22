@@ -130,29 +130,6 @@ Based on 1,710 real issues:
 
 ---
 
-## 📊 Expected Benefits
-
-### Time Savings
-- **Issue Creation**: 25 min → 10 min (60% reduction)
-- **Triage**: 15 min → 5 min per issue (67% reduction)
-- **Clarifications**: 2.5 → 0.5 rounds per issue (80% reduction)
-
-**Total**: ~250 hours/month saved company-wide
-
-### Quality Improvements
-- **Completeness**: 70% → 96%
-- **Clarity**: 65% → 92%
-- **Linkage**: 60% → 90%
-- **Label Discipline**: 80% → 98%
-
-### Efficiency Gains
-- **Faster Triage**: Issues have all needed info
-- **Better Planning**: Consistent epic structure
-- **Easier Search**: Proper labeling and structure
-- **Knowledge Base**: Issues serve as documentation
-
----
-
 ## 🎮 Available Commands
 
 Once installed, use these commands in Claude Code:
@@ -217,51 +194,6 @@ Claude will suggest:
 - **Issue Types**: 13 identified
 - **Labels**: 200+ catalogued
 
-### Quality Patterns Found
-
-**Epic Quality** (312 analyzed):
-- 94% have motivation section ✅
-- 87% have acceptance criteria ✅
-- 76% define scope clearly ✅
-
-**Story Quality** (286 analyzed):
-- 91% have motivation ✅
-- 88% have acceptance criteria ✅
-- 79% state outcome ✅
-
-**Label Discipline**:
-- 100% of active issues have team label ✅
-- 63% have kind label (improving to 85%+ on new issues)
-
----
-
-## 🎯 Recommended Rollout
-
-### Week 1: Pilot
-- Select one team
-- Train team (1 hour)
-- Create 10+ issues using plugin
-- Gather feedback
-
-### Weeks 2-3: Early Adoption
-- Train 3-4 more teams
-- Refine based on feedback
-- Track early metrics
-
-### Weeks 4-6: Company-wide
-- All teams trained
-- Plugin standard for all new issues
-- Support available in Slack
-- Metrics dashboard live
-
-### Month 2+: Optimization
-- Monthly reviews
-- Continuous improvement
-- Integrate with GitHub Actions
-- Evolve with company practices
-
-**Timeline**: 6 weeks to full adoption
-
 ---
 
 ## 📚 Documentation Structure
@@ -299,53 +231,10 @@ In 6 months, will you understand this issue without additional context?
 
 ---
 
-## 📞 Support
 
-### Questions?
-- **Slack**: #product-engineering or #roadmap
-- **Email**: product-team@giantswarm.io
-- **GitHub Issues**: Create an issue using this plugin (meta!)
-
-### Feedback?
-- Create an issue using this plugin
-- Post in #roadmap
-
-### Training?
-- Request from Product team
-- Office hours: Tuesdays 2-3pm CET
-
----
 
 ## 🔧 Technical Details
 
-### Plugin Structure
-
-```
-gs-product/
-├── .claude-plugin/
-│   └── plugin.json              # Plugin manifest
-├── commands/                    # Command definitions
-│   ├── create-issue.md          # /create-issue command
-│   ├── validate-issue.md        # /validate-issue command
-│   └── suggest-labels.md        # /suggest-labels command
-├── skills/                      # Background knowledge
-│   ├── issue-patterns/
-│   │   └── SKILL.md            # Issue patterns & types
-│   ├── label-taxonomy/
-│   │   └── SKILL.md            # Label reference
-│   └── quality-standards/
-│       └── SKILL.md            # Quality criteria
-├── .claude-code/                # Context and templates
-│   ├── instructions.md          # Main guidelines
-│   ├── issue-types.md           # Decision tree
-│   ├── labels.md                # Complete label list
-│   ├── validation-checklist.md  # Quality checklist
-│   └── templates/               # Issue templates (13 types)
-├── GUIDE.md                     # User guide
-├── CHEATSHEET.md                # Quick reference
-├── PLUGIN.md                    # Plugin documentation
-└── README.md                    # This file
-```
 
 ### How It Works
 
@@ -357,67 +246,6 @@ gs-product/
 6. **Validation**: Claude checks against quality standards
 7. **Presentation**: User reviews and confirms
 
----
 
-## 🏆 Quality Guarantee
 
-This plugin:
 
-- ✅ Covers **100%** of Giant Swarm issue types
-- ✅ Based on **1,710** real issues
-- ✅ Analyzed **11** teams
-- ✅ Documented **200+** labels
-- ✅ Provides **30+** examples
-- ✅ **Production-ready** for immediate use
-- ✅ **Validated** against actual team practices
-
-**No other system offers this level of comprehensive coverage.**
-
----
-
-## 🎉 You're All Set!
-
-**Everything you need is in this package.**
-
-1. ✅ Complete Claude Code plugin
-2. ✅ Comprehensive documentation
-3. ✅ Training materials
-4. ✅ Examples and anti-patterns
-5. ✅ Success metrics
-6. ✅ Rollout plan
-
-**Next Action**:
-- **Quick Start**: Open [CHEATSHEET.md](CHEATSHEET.md)
-- **Deep Dive**: Open [GUIDE.md](GUIDE.md)
-- **Use Commands**: Try `/create-issue`, `/validate-issue`, `/suggest-labels`
-- **Read Plugin Docs**: Open [PLUGIN.md](PLUGIN.md)
-
----
-
-**Happy issue creating!** 🚀
-
-*Transform your product communication starting today.*
-
----
-
-## 📜 License
-
-Apache-2.0
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-See [PLUGIN.md](PLUGIN.md) for development setup.
-
----
-
-*Giant Swarm Product Plugin (gs-product) for Claude Code v1.0.0*
-*Analyzed: 1,710 issues | Teams: 11 | Types: 13 | Labels: 200+*
-*Status: Production Ready ✅*
-*Last Updated: 2026-01-22*
