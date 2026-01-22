@@ -14,6 +14,7 @@ The goal is to convert the Helm charts in this repositoriy to using Giant Swarm'
    - Set `apiVersion` to `v2`.
    - Make sure a `description` field is present, describing what the chat provides.
    - Make sure the `home` field has the GitHub URL of the current repository as a value.
+   - If the `upstreamChartVersion` field is prensent, copy its value to a new annotation `io.giantswarm.application.upstream-chart-version` and then remove the field.
    - If the `restrictions` fields is present, convert it to annotations, like follows:
      - `clusterSingleton` becomes `io.giantswarm.application.restrictions.cluster-singleton`.
      - `compatibleProviders` becomes `io.giantswarm.application.restrictions.compatible-providers`.
