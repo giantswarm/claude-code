@@ -14,7 +14,7 @@ description: Knowledge about Flux CD in Giant Swarm platform
 
 ## flux CLI
 
-- The `flux` CLI facilitates tasks that would take much longer using kubectl.
+- The `flux` CLI facilitates some tasks that might require multiple kubectl commands otherwise.
 - Always use the CLI version matching the Flux version deployed in the cluster.
 - Check versions using `flux version --namespace flux-giantswarm`.
 - If the server version is not returned, check the image tag of the flux controller manager deployment in the `flux-giantswarm` namespace.
