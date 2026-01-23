@@ -113,6 +113,7 @@ Resources require explicit `.spec.serviceAccountName` definitions. The `automati
 
 Flux can automatically update app versions using:
 
+- **OCIRepository**: Defines the OCI registry to monitor for new app versions.
 - **ImageRepository**: Configures where images are stored and detects new versions.
 - **ImagePolicy**: Establishes rules for which versions should trigger updates (supports semver and regex).
 - **ImageUpdateAutomation**: Defines commit structure and file update strategies.
