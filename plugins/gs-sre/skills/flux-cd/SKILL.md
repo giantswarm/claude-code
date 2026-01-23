@@ -100,16 +100,6 @@ Flux can automatically update app versions using:
 
 Mark App resources with a comment for auto-updates: `# {"$imagepolicy": "default:app-name:tag"}`
 
-## Environment Management
-
-Giant Swarm uses a multi-directory approach with a single repository and branch as the source of truth.
-
-Configuration priority levels:
-- 100: cluster base
-- 110: stage environment (dev/staging/prod)
-- 120: regional environment
-- 130: cluster-specific configuration
-
 ## Giant Swarm Tools
 
 ### fake-flux
@@ -119,7 +109,9 @@ A Giant Swarm script that mimics the `flux` CLI locally. Validates resource gene
 ### test-all-ff
 
 Checks all manifests for errors using `yamllint` and `kubeconform`. Run from repository root:
+
 ```bash
 test-all-ff validate
 ```
+
 Works best in GitHub Actions but also runs locally or in git pre-commit hooks.
