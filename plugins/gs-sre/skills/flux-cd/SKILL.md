@@ -25,34 +25,14 @@ description: Knowledge about Flux CD in Giant Swarm platform
 - **`flux tree`**: Prints the hierarchy of resources managed by a Kustomization. Use `--compact` to show only Flux resources. Example: `flux tree kustomization gazelle-gitops --namespace default`
 - **`flux build kustomization --dry-run`**: Helps identify problems when other tools fall short. Note: secret and configmap variables remain unreplaced in dry-run mode.
 
-## GitOps Repository Structure
+## GitOps Repositories
 
-Giant Swarm recommends a hierarchical repository layout mirroring infrastructure organization:
+We use several repositories for GitOps:
 
-```
-bases/
-├── clusters/
-├── environments/
-│   ├── stages/
-│   │   ├── dev/
-│   │   └── prod/
-│   └── regions/
-│       ├── eu_central/
-│       └── us_west/
-management-clusters/
-└── MC_NAME/
-    ├── secrets/
-    └── organizations/
-        └── ORG_NAME/
-            └── workload-clusters/
-                ├── WC_NAME1/
-                │   ├── mapi/
-                │   │   ├── apps/
-                │   │   │   └── APP1/
-                │   │   └── cluster/
-                │   └── [out-of-band]/
-                └── WC_NAME2/
-```
+- `giantswarm/workload-clusters-fleet` for workload clusters and applications
+- `giantswarm/shared-config`: for shared configuration across clusters and installations
+- `giantswarm/<customer>-management-cluster`: for management cluster configuration, also referred to as CMC repos.
+- `giantswarm/<customer>-config`: for customer-specific shared configuration, also referred to as CCR repos.
 
 ## kubectl-gs GitOps Commands
 
