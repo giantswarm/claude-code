@@ -6,7 +6,7 @@ description: Check OSSF Security Scorecard for a given GitHub repository
 
    If the current workspace is a clone of a GitHub repository, use that repository's owner and name.
    
-   If you don't know which repository to fetch OSSF info for, ask the user for the name of the repository. Example: `giantswarm/hello-world-app`. If the no owner is provided, assume giantswarm.
+   If you don't know which repository to fetch OSSF info for, ask the user for the name of the repository. Example: `giantswarm/hello-world-app`. If no owner is provided, assume giantswarm.
 
 2. Construct the URL to fetch the OSSF Security Scorecard for the given repository in the following format:
 
