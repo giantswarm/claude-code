@@ -103,7 +103,7 @@ App names should include `${cluster_name}` to prevent collisions across clusters
 ### Configuration
 
 - **ConfigMaps**: For standard configuration values.
-- **Encrypted Secrets**: Sensitive data encrypted via GPG using the workload cluster's public key.
+- **Encrypted Secrets**: Sensitive data encrypted via AGE/GPG using the workload cluster's public key.
 
 ### ServiceAccount Requirements
 
