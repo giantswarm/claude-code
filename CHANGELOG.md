@@ -10,6 +10,12 @@ subscribe to the default branch instead. We structure this log by dates instead.
 
 ### Added
 
+- Added `security-scorecard` command to `gs-base` plugin to check OSSF Security Scorecard for a given GitHub repository.
+
+## 2026-01-22
+
+### Added
+
 - Added the `gs-product` plugin
 - Added general `CLAUDE.md` file for this repository
 

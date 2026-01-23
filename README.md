@@ -16,6 +16,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - `/gs-base:init-kubernetes` - Set up access to Kubernetes clusters
 - `/gs-base:init-search` - Set up search-mcp to access Docs, Intranet, and Handbook
 - `/gs-base:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
+- `/gs-base:security-scorecard` - Check OSSF Security Scorecard for a given GitHub repository
 
 **Skills:**
 
