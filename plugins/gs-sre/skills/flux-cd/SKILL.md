@@ -10,7 +10,7 @@ description: Knowledge about Flux CD in Giant Swarm platform
 ## Namespaces
 
 - Giant Swarm deploys their version of Flux controllers in the `flux-giantswarm` namespace.
-- Always specify `--namespace flux-giantswarm` when running Flux CLI commands.
+- Always specify `--namespace` when running Flux CLI commands.
 
 ## flux CLI
 
