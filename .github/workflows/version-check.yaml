@@ -56,7 +56,6 @@ jobs:
             let body = commentMarker + '\n';
 
             if (count === 0) {
-              body += '## ✅ Plugin Version Check\n\n';
               body += 'No plugin version bumps needed for this PR.\n';
             } else {
               body += '## 🔖 Plugin Version Check\n\n';
