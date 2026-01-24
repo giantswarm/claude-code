@@ -11,6 +11,7 @@ subscribe to the default branch instead. We structure this log by dates instead.
 ### Changed
 
 - Removed individual `plugin.json` files from plugins, using `strict: false` in marketplace.json instead for simpler maintenance
+- Updated validation script to support non-strict mode (reads plugin metadata from marketplace.json)
 
 ## 2026-01-22
 
