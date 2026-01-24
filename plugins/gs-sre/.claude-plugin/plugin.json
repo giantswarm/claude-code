@@ -1,9 +1,0 @@
-{
-    "name": "gs-sre",
-    "description": "SRE tools and commands for Giant Swarm site reliability engineering",
-    "version": "0.1.0",
-    "author": {
-        "name": "Giant Swarm GmbH"
-    },
-    "keywords": ["sre", "reliability", "incident-response", "monitoring", "kubernetes"]
-}
