@@ -9,6 +9,9 @@
     "check-version": "node shared/scripts/check-version-bump.js --check",
     "test": "npm run validate && npm run check-conflicts"
   },
+  "bin": {
+    "pwrun": "./shared/scripts/pwrun"
+  },
   "repository": {
     "type": "git",
     "url": "internal"

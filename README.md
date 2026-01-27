@@ -23,6 +23,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - **backstage**: The Backstage developer portal
 - **fluxcd**: Best practices when working with Flux CD at Giant Swarm
 - **kubernetes**: To keep in mind when working with Kubernetes
+- **password-manager**: Password manager use at Giant Swarm
 - **registries**: Working with container and OCI registries
 - **software-engineering**: Software engineering base skills for Giant Swarm staff
 

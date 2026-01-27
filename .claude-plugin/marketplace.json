@@ -12,21 +12,34 @@
       "name": "gs-base",
       "source": "./plugins/gs-base",
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers",
-      "version": "0.1.0"
+      "version": "0.2.0"
     },
     {
       "name": "gs-product",
       "source": "./plugins/gs-product",
       "description": "Create high-quality GitHub issues following Giant Swarm patterns and standards",
       "version": "1.0.0",
-      "keywords": ["github", "issues", "product-management", "project-management", "templates", "quality"]
+      "keywords": [
+        "github",
+        "issues",
+        "product-management",
+        "project-management",
+        "templates",
+        "quality"
+      ]
     },
     {
       "name": "gs-sre",
       "source": "./plugins/gs-sre",
       "description": "SRE tools and commands for Giant Swarm site reliability engineering",
       "version": "0.1.0",
-      "keywords": ["sre", "reliability", "incident-response", "monitoring", "kubernetes"]
+      "keywords": [
+        "sre",
+        "reliability",
+        "incident-response",
+        "monitoring",
+        "kubernetes"
+      ]
     }
   ]
 }
