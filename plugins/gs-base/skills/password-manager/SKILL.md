@@ -5,7 +5,7 @@ description: Password manager use at Giant Swarm
 
 ## Requirements
 
-The `pwrun` script must be available in PATH. From the claude-code-plugins repo directory:
+The `pwrun` script must be available in PATH. From the giantswarm/claude-code repo directory:
 
 ```sh
 npm link
