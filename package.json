@@ -6,6 +6,7 @@
   "scripts": {
     "validate": "node shared/scripts/validate-schema.js",
     "check-conflicts": "node shared/scripts/check-conflicts.js",
+    "check-version": "node shared/scripts/check-version-bump.js --check",
     "test": "npm run validate && npm run check-conflicts"
   },
   "bin": {
