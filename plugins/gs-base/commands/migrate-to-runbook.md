@@ -119,7 +119,7 @@ For each code block:
 3. Fix any `REF_NOT_FOUND` errors by correcting the relref paths.
 ### Step 10: Ask About Pull Request
 
-Ask user: "Would you like me to create a pull request for this migration?"
+Ask user: "Would you like me to create a pull request for this migration?" using the AskUserQuestion tool.
 
 If yes:
 1. Create feature branch: `migrate-runbook-<folder-name>`
