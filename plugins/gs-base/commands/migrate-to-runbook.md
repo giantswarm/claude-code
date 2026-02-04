@@ -44,7 +44,7 @@ The ops-recipe URL or path to migrate, e.g.:
    - Main purpose and problem being solved
    - Key commands and code snippets
    - kubectl commands that need context flags
-   - Variables that should be configurable (installation, cluster names)
+   - Variables that should be configurable (installation, cluster name, namespace etc.)
 
 ### Step 5: Create New Runbook
 
