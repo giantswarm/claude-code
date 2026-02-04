@@ -140,7 +140,7 @@ If alerts were found in Step 2:
    - `giantswarm/prometheus-rules`
    - `giantswarm/sloth-rules`
 
-Ask: "Would you like me to create PRs to update the alerting rules?"
+Ask: "Would you like me to create PRs to update the alerting rules?" using AskUserQuestion tool.
 
 ### Step 12: Update Alerting Rules (if requested)
 
