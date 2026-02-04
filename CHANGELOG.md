@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 howver, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
 
+## 2026-02-04
+
+### Added
+
+- Added `migrate-to-runbook` command to `gs-base` plugin for migrating ops-recipes to runbooks
+- Added `runbook-standards` skill to `gs-base` plugin with quality standards and best practices for runbooks
+- Added runbook template in `gs-base/.claude-code/runbooks/templates/`
+
 ## 2026-01-24
 
 ### Added
