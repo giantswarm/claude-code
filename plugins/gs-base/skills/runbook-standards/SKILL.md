@@ -16,21 +16,22 @@ description: Quality standards and best practices for Giant Swarm runbooks. Use 
 | `title` | Yes | Descriptive title |
 | `description` | Yes | One-line summary |
 | `last_review_date` | Yes | YYYY-MM-DD format, set to current date |
+| `layout` | Yes | Must be `runbook` |
 | `owner` | Yes | Team GitHub URL (e.g., `https://github.com/orgs/giantswarm/teams/team-name`) |
-| `weight` | No | Sort order (default: 50) |
-| `linkTitle` | No | Short title for navigation |
-| `user_questions` | No | Questions this runbook answers |
+| `toc_hide` | Yes | Set to `true` |
+| `runbook.variables` | No | Variables for interactive commands |
 
 ## Variables for Interactive Runbooks
 
-Define in front matter when kubectl or installation-specific commands are used:
+Define under `runbook.variables` when kubectl or installation-specific commands are used:
 
 ```yaml
-variables:
-  - name: INSTALLATION
-    description: The installation name
-  - name: CLUSTER
-    description: The workload cluster name
+runbook:
+  variables:
+    - name: INSTALLATION
+      description: Installation name
+    - name: CLUSTER
+      description: Cluster name
 ```
 
 ## Code Block Standards
@@ -73,7 +74,7 @@ See [related runbook]({{< relref "/docs/support-and-ops/runbooks/other-runbook" 
 
 | Feature | Use Case | Documentation |
 |---------|----------|---------------|
-| Variables | Installation/cluster-specific commands | Front matter `variables` |
+| Variables | Installation/cluster-specific commands | Front matter `runbook.variables` |
 | Dashboard links | Link to Grafana with correct context | Showcase docs |
 | Known issues | Structured upstream/internal issue tracking | Showcase docs |
 | Grafana Explore | Pre-built metric/log queries | Showcase docs |
@@ -82,10 +83,12 @@ See [related runbook]({{< relref "/docs/support-and-ops/runbooks/other-runbook" 
 
 - [ ] Clear, actionable title describing the problem or task
 - [ ] Description explains what problem this runbook solves
+- [ ] `layout: runbook` is set
 - [ ] `last_review_date` is set to current date
+- [ ] `toc_hide: true` is set
 - [ ] Owner team is assigned
 - [ ] All kubectl commands have `--context` as first flag
 - [ ] Code blocks use `highlight` shortcode
 - [ ] Internal links use `relref` shortcode
 - [ ] Long commands are wrapped with backslashes
-- [ ] Build passes without `REF_NOT_FOUND` errors
+- [ ] Build passes without front matter or `REF_NOT_FOUND` errors

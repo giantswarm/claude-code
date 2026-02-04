@@ -50,30 +50,29 @@ The ops-recipe URL or path to migrate, e.g.:
 
 1. Derive a meaningful folder name from the title (lowercase, hyphens, not too long).
 2. Create directory: `content/docs/support-and-ops/runbooks/<folder-name>/`
-3. Create `index.md` with front matter:
+3. Create `index.md` with front matter (note: `layout: runbook` and `toc_hide: true` are required):
 
 ```yaml
 ---
 title: <Descriptive Title>
-linkTitle: <Short Title>
 description: <One-line description>
-weight: 50
 last_review_date: <today's date YYYY-MM-DD>
+layout: runbook
 owner:
   - https://github.com/orgs/giantswarm/teams/<team>
-user_questions:
-  - <Common question this runbook answers>
+toc_hide: true
 ---
 ```
 
-4. If kubectl commands are present, add variables to front matter:
+4. If kubectl commands are present, add variables under the `runbook` key:
 
 ```yaml
-variables:
-  - name: INSTALLATION
-    description: The installation name
-  - name: CLUSTER
-    description: The workload cluster name
+runbook:
+  variables:
+    - name: INSTALLATION
+      description: Installation name
+    - name: CLUSTER
+      description: Cluster name
 ```
 
 ### Step 6: Migrate Content
