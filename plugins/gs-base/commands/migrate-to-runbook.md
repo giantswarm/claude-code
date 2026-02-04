@@ -125,7 +125,7 @@ If yes:
 1. Create feature branch: `migrate-runbook-<folder-name>`
 2. Stage and commit changes with message: `docs: Migrate <ops-recipe-name> to runbook`
 3. Push branch.
-4. Create PR using `gh pr create`:
+4. Create pull request:
    - Title: `docs: Migrate <ops-recipe-name> to runbook`
    - Body: Include migration summary, link to old ops-recipe, and checklist
    - Reviewers: `giantswarm/sig-docs`
