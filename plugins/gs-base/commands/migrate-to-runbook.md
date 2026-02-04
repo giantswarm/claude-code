@@ -117,8 +117,6 @@ For each code block:
 1. Run: `./run-dev-server-with-merge.sh` with a timeout of 60 seconds
 2. Wait for "Press Ctrl+C to stop" (success) or errors.
 3. Fix any `REF_NOT_FOUND` errors by correcting the relref paths.
-4. Stop after 60 seconds if the build succeeds.
-
 ### Step 10: Ask About Pull Request
 
 Ask user: "Would you like me to create a pull request for this migration?"
