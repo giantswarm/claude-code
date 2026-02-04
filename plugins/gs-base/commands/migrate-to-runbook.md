@@ -111,13 +111,25 @@ For each code block:
 1. Search the repository for `relref` links pointing to the old ops-recipe path.
 2. Update them to point to the new runbook location.
 3. Also search for plain markdown links to the ops-recipe URL.
+4. **Important**: Only update references to runbooks that already exist on main. If referencing a runbook from another pending PR, keep the ops-recipe reference to avoid build failures.
 
-### Step 9: Verify Build
+### Step 9: Update CHANGELOG
+
+1. Open `CHANGELOG.md` in the repository root.
+2. Find the `## [Unreleased]` section.
+3. Under `### Changed` (create if missing), add an entry:
+   ```
+   - Migrated `<ops-recipe-title>` ops recipe to runbook
+   ```
+4. If `### Changed` doesn't exist under `[Unreleased]`, add it after `### Added`.
+
+### Step 10: Verify Build
 
 1. Run: `./run-dev-server-with-merge.sh` with a timeout of 60 seconds
 2. Wait for "Press Ctrl+C to stop" (success) or errors.
 3. Fix any `REF_NOT_FOUND` errors by correcting the relref paths.
-### Step 10: Ask About Pull Request
+
+### Step 11: Ask About Pull Request
 
 Ask user: "Would you like me to create a pull request for this migration?" using the AskUserQuestion tool.
 
@@ -131,7 +143,7 @@ If yes:
    - Reviewers: `giantswarm/sig-docs`
 5. Provide PR link to user.
 
-### Step 11: Report Alert Updates Needed
+### Step 12: Report Alert Updates Needed
 
 If alerts were found in Step 2:
 1. List each alert that needs updating.
@@ -142,7 +154,7 @@ If alerts were found in Step 2:
 
 Ask: "Would you like me to create PRs to update the alerting rules?" using AskUserQuestion tool.
 
-### Step 12: Update Alerting Rules (if requested)
+### Step 13: Update Alerting Rules (if requested)
 
 For each affected repo (`prometheus-rules` and/or `sloth-rules`):
 1. Clone to a temporary directory outside the current workspace.
