@@ -3,8 +3,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-howver, we are **not** using semantic versioning, as users are encouraged to
+however, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
+
+## Unreleased
+
+### Added
+
+- Added `1password` skill to `gs-base` plugin for 1Password CLI integration
 
 ## 2026-02-04
 
