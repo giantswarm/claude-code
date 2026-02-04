@@ -12,7 +12,6 @@ subscribe to the default branch instead. We structure this log by dates instead.
 
 - Added `migrate-to-runbook` command to `gs-base` plugin for migrating ops-recipes to runbooks
 - Added `runbook-standards` skill to `gs-base` plugin with quality standards and best practices for runbooks
-- Added runbook template in `gs-base/.claude-code/runbooks/templates/`
 
 ## 2026-01-24
 
