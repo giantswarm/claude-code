@@ -157,5 +157,3 @@ For each affected repo (`prometheus-rules` and/or `sloth-rules`):
 
 - Always verify the build passes before creating a PR.
 - Keep PRs focused on one runbook at a time for easier review.
-- The `sig-docs` team should review all runbook content changes.
-- Alert rule PRs can be created after the content PR is merged.
