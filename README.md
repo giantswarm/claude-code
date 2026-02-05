@@ -21,6 +21,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 
 **Skills:**
 
+- **1password**: 1Password password manager (`op` 1Password CLI) use at Giant Swarm
 - **backstage**: The Backstage developer portal
 - **fluxcd**: Best practices when working with Flux CD at Giant Swarm
 - **kubernetes**: To keep in mind when working with Kubernetes

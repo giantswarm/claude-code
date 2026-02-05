@@ -6,9 +6,10 @@
 
 ## IMPORTANT: Private repository and public roadmap project for issues
 
-- People and agents at Giant Swarm create issues in the private https://github.com/giantswarm/giantswarm repository (org=giantswarm, repo=giantswarm). Always create issues there, by default.
-- Our main roadmap project is https://github.com/orgs/giantswarm/projects/273, which lives in the public https://github.com/giantswarm/roadmap repository. All our issues are added to that project.
-- Since https://github.com/giantswarm/roadmap is **public**, never create issues in that repository without being specifically asked to create a **public** roadmap issue, which would be visible to the whole Internet. Issues are usually created in private repositories (like giantswarm/giantswarm) and added to the roadmap project as an item.
+- Giant Swarm uses only GitHub ProjectsV2 projects (no more legacy Projects)
+- At Giant Swarm, issues are created in the private https://github.com/giantswarm/giantswarm repository (org=giantswarm, repo=giantswarm).
+- Giant Swarm's main roadmap project is https://github.com/orgs/giantswarm/projects/273, which lives in the public https://github.com/giantswarm/roadmap repository. All our issues are added to that project.
+- Since https://github.com/giantswarm/roadmap is **public**, only create public issues in that repository. Confidential issues (e.g. containing Giant Swarm internal information or PII) usually created in private repositories (mainly giantswarm/giantswarm) and added to the roadmap project as an item.
 
 ## 🎯 When to Use Which Type
 
