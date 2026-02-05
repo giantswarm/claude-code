@@ -11,6 +11,7 @@ subscribe to the default branch instead. We structure this log by dates instead.
 ### Added
 
 - Added `1password` skill to `gs-base` plugin for 1Password CLI integration
+- Added explanation of giantswarm/giantswarm and giantswarm/roadmap, to ease working with issues and avoid mistakes
 
 ## 2026-02-04
 

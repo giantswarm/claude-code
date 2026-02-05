@@ -1,6 +1,6 @@
 ---
-name: password-manager
-description: Password manager (1Password) use at Giant Swarm
+name: 1password
+description: Using the 1Password password manager to safely access Giant Swarm resources
 ---
 
 ## When to use
@@ -15,7 +15,7 @@ description: Password manager (1Password) use at Giant Swarm
 
 ## What to do
 
-- Use the `op run --no-masking --` prefix to launch commands that require authentication (like `gh`, `opsctl`, `devctl`, `mcli` and similar).
+Use the `op run --` prefix to launch commands that require authentication (like `gh`, `devctl`, `mcli`, `opsctl` and similar).
 
 ## If there are still authentication failures
 
