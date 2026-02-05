@@ -20,6 +20,11 @@ subscribe to the default branch instead. We structure this log by dates instead.
 - Added `migrate-to-runbook` command to `gs-base` plugin for migrating ops-recipes to runbooks
 - Added `runbook-standards` skill to `gs-base` plugin with quality standards and best practices for runbooks
 
+### Changed
+
+- Updated `migrate-to-runbook` command to include CHANGELOG update step and warning about pending PR references
+- Updated `migrate-to-runbook` command to add migration notice step for original ops-recipe (redirect to new runbook)
+
 ## 2026-01-24
 
 ### Added

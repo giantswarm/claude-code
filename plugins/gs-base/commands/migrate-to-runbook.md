@@ -80,7 +80,23 @@ runbook:
 1. Copy the content from ops-recipe.
 2. Preserve all information accurately.
 
-### Step 7: Improve Code Blocks
+### Step 7: Replace Original Ops-Recipe with Migration Notice
+
+Replace the original ops-recipe content with a migration notice:
+
+1. Update the title by appending "(migrated)": `title: "<Original Title> (migrated)"`
+2. Keep the `owner` and `toc_hide: true` fields
+3. Replace all content with:
+
+```markdown
+{{% alert title="Migrated to runbook" %}}
+This ops-recipe has been migrated to a [runbook]({{< relref "/docs/support-and-ops/runbooks/<folder-name>" >}}) as part of our [consolidation efforts](https://github.com/giantswarm/roadmap/issues/2838).
+{{% /alert %}}
+```
+
+This ensures existing alert links continue to work and redirect users to the new runbook.
+
+### Step 8: Improve Code Blocks
 
 For each code block:
 
@@ -106,18 +122,30 @@ For each code block:
 
 4. Create one code block per command where practical.
 
-### Step 8: Update Internal References
+### Step 9: Update Internal References
 
 1. Search the repository for `relref` links pointing to the old ops-recipe path.
 2. Update them to point to the new runbook location.
 3. Also search for plain markdown links to the ops-recipe URL.
+4. **Important**: Only update references to runbooks that already exist on main. If referencing a runbook from another pending PR, keep the ops-recipe reference to avoid build failures.
 
-### Step 9: Verify Build
+### Step 10: Update CHANGELOG
+
+1. Open `CHANGELOG.md` in the repository root.
+2. Find the `## [Unreleased]` section.
+3. Under `### Changed` (create if missing), add an entry:
+   ```
+   - Migrated `<ops-recipe-title>` ops recipe to runbook
+   ```
+4. If `### Changed` doesn't exist under `[Unreleased]`, add it after `### Added`.
+
+### Step 11: Verify Build
 
 1. Run: `./run-dev-server-with-merge.sh` with a timeout of 60 seconds
 2. Wait for "Press Ctrl+C to stop" (success) or errors.
 3. Fix any `REF_NOT_FOUND` errors by correcting the relref paths.
-### Step 10: Ask About Pull Request
+
+### Step 12: Ask About Pull Request
 
 Ask user: "Would you like me to create a pull request for this migration?" using the AskUserQuestion tool.
 
@@ -131,7 +159,7 @@ If yes:
    - Reviewers: `giantswarm/sig-docs`
 5. Provide PR link to user.
 
-### Step 11: Report Alert Updates Needed
+### Step 13: Report Alert Updates Needed
 
 If alerts were found in Step 2:
 1. List each alert that needs updating.
@@ -142,7 +170,7 @@ If alerts were found in Step 2:
 
 Ask: "Would you like me to create PRs to update the alerting rules?" using AskUserQuestion tool.
 
-### Step 12: Update Alerting Rules (if requested)
+### Step 14: Update Alerting Rules (if requested)
 
 For each affected repo (`prometheus-rules` and/or `sloth-rules`):
 1. Clone to a temporary directory outside the current workspace.
