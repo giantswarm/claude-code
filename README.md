@@ -4,6 +4,20 @@ Claude Code plugins for Giant Swarm engineers.
 
 ## Plugins
 
+### gs-appdev
+
+Commands and skills for Giant Swarm application developers working with Helm charts
+
+**Commands:**
+
+- `/gs-appdev:chart-icon` - Specify a proper icon for a Helm chart
+- `/gs-appdev:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
+- `/gs-appdev:upgrade-vendir-app` - Sync a GiantSwarm chart/bundle with upstream releases via vendir
+
+**Skills:**
+
+- **chart-icons**: Knowledge about application icons at Giant Swarm
+
 ### gs-base
 
 A general purpose Claude Code plugin for Giant Swarm platform engineers
@@ -15,9 +29,8 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - `/gs-base:init-github` - Initialize the GitHub MCP tools
 - `/gs-base:init-kubernetes` - Set up access to Kubernetes clusters
 - `/gs-base:init-search` - Set up search-mcp to access Docs, Intranet, and Handbook
-- `/gs-base:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
+- `/gs-base:migrate-to-runbook` - Migrate an ops-recipe to a runbook following Giant Swarm standards
 - `/gs-base:security-scorecard` - Check OSSF Security Scorecard for a given GitHub repository
-- `/gs-base:upgrade-vendir-app` - Sync a GiantSwarm chart/bundle with upstream releases via vendir
 
 **Skills:**
 
@@ -25,6 +38,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - **fluxcd**: Best practices when working with Flux CD at Giant Swarm
 - **kubernetes**: To keep in mind when working with Kubernetes
 - **registries**: Working with container and OCI registries
+- **runbook-standards**: Quality standards and best practices for Giant Swarm runbooks
 - **software-engineering**: Software engineering base skills for Giant Swarm staff
 
 ### gs-product
