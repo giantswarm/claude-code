@@ -9,10 +9,23 @@
   "strict": false,
   "plugins": [
     {
+      "name": "gs-appdev",
+      "source": "./plugins/gs-appdev",
+      "description": "Commands and skills for Giant Swarm application developers working with Helm charts",
+      "version": "0.1.0",
+      "keywords": [
+        "helm",
+        "charts",
+        "app-development",
+        "vendir",
+        "icons"
+      ]
+    },
+    {
       "name": "gs-base",
       "source": "./plugins/gs-base",
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers",
-      "version": "0.4.0"
+      "version": "0.5.0"
     },
     {
       "name": "gs-product",

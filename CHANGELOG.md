@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 howver, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
 
+## 2026-02-06
+
+### Added
+
+- Added `gs-appdev` plugin with commands and skills for Helm chart development
+  - `/gs-appdev:chart-icon` - Specify a proper icon for a Helm chart
+  - `/gs-appdev:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
+  - `/gs-appdev:upgrade-vendir-app` - Sync a GiantSwarm chart/bundle with upstream releases via vendir
+  - `chart-icons` skill - Knowledge about application icons at Giant Swarm
+
+### Changed
+
+- Moved `migrate-chart-metadata` and `upgrade-vendir-app` commands from `gs-base` to `gs-appdev` plugin
+
 ## 2026-02-04
 
 ### Added
