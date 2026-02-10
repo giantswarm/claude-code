@@ -12,6 +12,10 @@ subscribe to the default branch instead. We structure this log by dates instead.
 
 - Updated `runbook-standards` skill: clarify that variables must be INSTALLATION/CLUSTER (not WC_CONTEXT/MC_CONTEXT), add dashboard links documentation, link to code blocks showcase
 - Updated `migrate-to-runbook` command: add dashboard links step, clarify variable naming requirements, improve highlight shortcode language guidance
+### Added
+
+- Added `gs-godev` plugin for Go development at Giant Swarm
+  - `/gs-godev:cleanup-gomod-replace` - Clean up replacements in go.mod
 
 ## 2026-02-06
 
