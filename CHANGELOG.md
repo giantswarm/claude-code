@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 howver, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
 
+## 2026-02-10
+
+### Changed
+
+- Updated `runbook-standards` skill: use fenced code blocks instead of `highlight` shortcodes, clarify that variables must be INSTALLATION/CLUSTER (not WC_CONTEXT/MC_CONTEXT), add dashboard links documentation
+- Updated `migrate-to-runbook` command: use fenced code blocks, add dashboard links step, clarify variable naming requirements
+
 ## 2026-02-06
 
 ### Added

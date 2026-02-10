@@ -64,7 +64,8 @@ toc_hide: true
 ---
 ```
 
-4. If kubectl commands are present, add variables under the `runbook` key:
+4. If kubectl commands are present, add variables under the `runbook` key.
+   **IMPORTANT**: Always use `INSTALLATION` and `CLUSTER` as variable names — never `WC_CONTEXT` or `MC_CONTEXT`. The runbook system auto-generates a "Setting your kubectl context" block that exports `$WC_CONTEXT` and `$MC_CONTEXT` from these two variables.
 
 ```yaml
 runbook:
@@ -73,6 +74,15 @@ runbook:
       description: Installation name
     - name: CLUSTER
       description: Cluster name
+```
+
+5. If the runbook references Grafana dashboards, add MC-aware dashboard links. The dashboard UID and slug come from the Grafana URL (the part after `/d/`):
+
+```yaml
+runbook:
+  dashboards:
+    - name: Dashboard Name
+      link: https://grafana-$INSTALLATION.teleport.giantswarm.io/d/<UID>/<slug>?orgId=1&var-cluster=$CLUSTER
 ```
 
 ### Step 6: Migrate Content
@@ -100,12 +110,13 @@ This ensures existing alert links continue to work and redirect users to the new
 
 For each code block:
 
-1. Convert fenced code blocks to `highlight` shortcode:
-   ```
-   {{< highlight shell >}}
+1. Use fenced code blocks with language identifiers (`bash`, `yaml`, `text`):
+   ````
+   ```bash
    command here
-   {{< /highlight >}}
    ```
+   ````
+   **Do NOT use** `{{< highlight shell >}}` shortcodes — use fenced code blocks instead.
 
 2. For kubectl commands:
    - Ensure `--context` is the FIRST flag after `kubectl`.
@@ -113,7 +124,7 @@ For each code block:
    - Use `$WC_CONTEXT` for workload cluster operations.
 
 3. Wrap long commands with backslashes for readability:
-   ```shell
+   ```bash
    kubectl --context $WC_CONTEXT \
      get pods \
      --namespace kube-system \
@@ -121,6 +132,8 @@ For each code block:
    ```
 
 4. Create one code block per command where practical.
+
+5. If any `{{< highlight ... >}}` shortcodes exist in the source content, convert them to fenced code blocks.
 
 ### Step 9: Update Internal References
 

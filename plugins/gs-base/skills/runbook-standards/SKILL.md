@@ -23,7 +23,9 @@ description: Quality standards and best practices for Giant Swarm runbooks. Use 
 
 ## Variables for Interactive Runbooks
 
-Define under `runbook.variables` when kubectl or installation-specific commands are used:
+Define under `runbook.variables` when kubectl or installation-specific commands are used.
+
+**IMPORTANT**: Variables must be `INSTALLATION` and `CLUSTER` — never `WC_CONTEXT` or `MC_CONTEXT` directly. The runbook system auto-generates a "Setting your kubectl context" block that exports `$WC_CONTEXT` and `$MC_CONTEXT` from these two variables.
 
 ```yaml
 runbook:
@@ -34,16 +36,21 @@ runbook:
       description: Cluster name
 ```
 
+Commands in the runbook body then use `$WC_CONTEXT` and `$MC_CONTEXT` as usual — the reader will have set them via the auto-generated block.
+
 ## Code Block Standards
 
-### Use Highlight Shortcode
+### Use Fenced Code Blocks
 
-Instead of fenced code blocks, use:
-```
-{{< highlight shell >}}
+Use standard fenced code blocks with language identifiers (`bash`, `yaml`, `text`):
+
+````
+```bash
 kubectl --context $WC_CONTEXT get pods
-{{< /highlight >}}
 ```
+````
+
+**Do NOT use** the `{{< highlight shell >}}` shortcode — use fenced code blocks instead.
 
 ### kubectl Context Rules
 
@@ -55,7 +62,8 @@ kubectl --context $WC_CONTEXT get pods
 ### Multi-line Commands
 
 Wrap long commands with backslashes:
-```shell
+
+```bash
 kubectl --context $WC_CONTEXT \
   get pods \
   --namespace kube-system \
@@ -70,12 +78,25 @@ Always use `relref` shortcode for internal links:
 See [related runbook]({{< relref "/docs/support-and-ops/runbooks/other-runbook" >}})
 ```
 
+## Dashboard Links
+
+When a runbook references Grafana dashboards, add MC-aware dynamic links in the frontmatter. These become clickable links when the INSTALLATION variable is set:
+
+```yaml
+runbook:
+  dashboards:
+    - name: DNS
+      link: https://grafana-$INSTALLATION.teleport.giantswarm.io/d/<DASHBOARD_UID>/<dashboard-slug>?orgId=1&var-cluster=$CLUSTER
+```
+
+The dashboard UID and slug come from the Grafana URL (the part after `/d/`). Pass relevant variables like `$CLUSTER` via query parameters (e.g., `var-cluster=$CLUSTER`).
+
 ## Runbook Features
 
 | Feature | Use Case | Documentation |
 |---------|----------|---------------|
 | Variables | Installation/cluster-specific commands | Front matter `runbook.variables` |
-| Dashboard links | Link to Grafana with correct context | Showcase docs |
+| Dashboard links | MC-aware Grafana links with variable substitution | Front matter `runbook.dashboards` |
 | Known issues | Structured upstream/internal issue tracking | Showcase docs |
 | Grafana Explore | Pre-built metric/log queries | Showcase docs |
 
@@ -88,7 +109,7 @@ See [related runbook]({{< relref "/docs/support-and-ops/runbooks/other-runbook" 
 - [ ] `toc_hide: true` is set
 - [ ] Owner team is assigned
 - [ ] All kubectl commands have `--context` as first flag
-- [ ] Code blocks use `highlight` shortcode
+- [ ] Code blocks use fenced code blocks with language identifiers (not `highlight` shortcode)
 - [ ] Internal links use `relref` shortcode
 - [ ] Long commands are wrapped with backslashes
 - [ ] Build passes without front matter or `REF_NOT_FOUND` errors
