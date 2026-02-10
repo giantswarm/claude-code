@@ -12,7 +12,7 @@
       "name": "gs-appdev",
       "source": "./plugins/gs-appdev",
       "description": "Commands and skills for Giant Swarm application developers working with Helm charts",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "keywords": [
         "helm",
         "charts",
