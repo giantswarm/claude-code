@@ -6,7 +6,7 @@ description:
 
 ## Summary
 
-The goal is to help the user to setup tools that aid in generation of a JSON schema and a README.md file
+The goal is to help the user to setup tools that aid in generation of a JSON Schema and a README.md file
 describing a helm chart. Both tools base on specific comments that need to be placed in the `values.yaml`
 file. The tool to generate the schema is https://github.com/losisin/helm-values-schema-json, while the tool to
 generate the README.md file is https://github.com/norwoodj/helm-docs. Additionally, we will use
