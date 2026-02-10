@@ -18,8 +18,8 @@ complete.
 
 ## Step 1
 
-Validate that the `pre-commit` tool is installed. Try to execute the tool. If it is not available, print a
-message asking the user to install it and stop processing this command.
+Validate that the `pre-commit` tool is installed. Try to execute the tool. If not installed, tell the user to
+install it based on the instructions at https://pre-commit.com/#installation and stop processing this command.
 
 When the tool is available, execute the `pre-commit install --install-hooks` command to install necessary
 tools.
