@@ -10,8 +10,8 @@ subscribe to the default branch instead. We structure this log by dates instead.
 
 ### Changed
 
-- Updated `runbook-standards` skill: use fenced code blocks instead of `highlight` shortcodes, clarify that variables must be INSTALLATION/CLUSTER (not WC_CONTEXT/MC_CONTEXT), add dashboard links documentation
-- Updated `migrate-to-runbook` command: use fenced code blocks, add dashboard links step, clarify variable naming requirements
+- Updated `runbook-standards` skill: clarify that variables must be INSTALLATION/CLUSTER (not WC_CONTEXT/MC_CONTEXT), add dashboard links documentation, link to code blocks showcase
+- Updated `migrate-to-runbook` command: add dashboard links step, clarify variable naming requirements, improve highlight shortcode language guidance
 
 ## 2026-02-06
 

@@ -110,13 +110,13 @@ This ensures existing alert links continue to work and redirect users to the new
 
 For each code block:
 
-1. Use fenced code blocks with language identifiers (`bash`, `yaml`, `text`):
-   ````
-   ```bash
-   command here
+1. Convert fenced code blocks to `highlight` shortcode for syntax highlighting and copy button:
    ```
-   ````
-   **Do NOT use** `{{< highlight shell >}}` shortcodes — use fenced code blocks instead.
+   {{< highlight shell >}}
+   command here
+   {{< /highlight >}}
+   ```
+   Use appropriate language: `shell` for commands, `yaml` for YAML, `json` for JSON, `text` for plain output.
 
 2. For kubectl commands:
    - Ensure `--context` is the FIRST flag after `kubectl`.
@@ -124,16 +124,16 @@ For each code block:
    - Use `$WC_CONTEXT` for workload cluster operations.
 
 3. Wrap long commands with backslashes for readability:
-   ```bash
+   ```
+   {{< highlight shell >}}
    kubectl --context $WC_CONTEXT \
      get pods \
      --namespace kube-system \
      --selector app=coredns
+   {{< /highlight >}}
    ```
 
 4. Create one code block per command where practical.
-
-5. If any `{{< highlight ... >}}` shortcodes exist in the source content, convert them to fenced code blocks.
 
 ### Step 9: Update Internal References
 

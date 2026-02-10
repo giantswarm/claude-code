@@ -40,17 +40,19 @@ Commands in the runbook body then use `$WC_CONTEXT` and `$MC_CONTEXT` as usual â
 
 ## Code Block Standards
 
-### Use Fenced Code Blocks
+### Use Highlight Shortcode
 
-Use standard fenced code blocks with language identifiers (`bash`, `yaml`, `text`):
+Use Hugo's `highlight` shortcode (not fenced code blocks) to get syntax highlighting, a copy button, and optional line numbers:
 
-````
-```bash
-kubectl --context $WC_CONTEXT get pods
 ```
-````
+{{< highlight shell >}}
+kubectl --context $WC_CONTEXT get pods
+{{< /highlight >}}
+```
 
-**Do NOT use** the `{{< highlight shell >}}` shortcode â€” use fenced code blocks instead.
+Supported languages: `shell` (commands), `yaml`, `json`, `text` (plain output), `go`, etc.
+
+See the [code blocks showcase](https://intranet.giantswarm.io/docs/support-and-ops/about-runbooks/showcase/code-blocks/) for advanced features like line numbers and line emphasis.
 
 ### kubectl Context Rules
 
@@ -63,12 +65,14 @@ kubectl --context $WC_CONTEXT get pods
 
 Wrap long commands with backslashes:
 
-```bash
+```
+{{< highlight shell >}}
 kubectl --context $WC_CONTEXT \
   get pods \
   --namespace kube-system \
   --selector app=coredns \
   --output wide
+{{< /highlight >}}
 ```
 
 ## Internal Links
@@ -109,7 +113,7 @@ The dashboard UID and slug come from the Grafana URL (the part after `/d/`). Pas
 - [ ] `toc_hide: true` is set
 - [ ] Owner team is assigned
 - [ ] All kubectl commands have `--context` as first flag
-- [ ] Code blocks use fenced code blocks with language identifiers (not `highlight` shortcode)
+- [ ] Code blocks use `highlight` shortcode (not fenced code blocks)
 - [ ] Internal links use `relref` shortcode
 - [ ] Long commands are wrapped with backslashes
 - [ ] Build passes without front matter or `REF_NOT_FOUND` errors
