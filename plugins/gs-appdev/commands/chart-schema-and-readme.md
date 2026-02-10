@@ -35,7 +35,6 @@ Prepare files and pre-commit configuration.
    directory. If it doesn't, create it by templating the following content:
 
    ```
-   # .schema.yaml
    # yaml-language-server: $schema=https://github.com/losisin/helm-values-schema-json/raw/refs/heads/main/config.schema.json
 
    values:
@@ -93,6 +92,8 @@ Prepare files and pre-commit configuration.
            - --chart-search-root=[DETECTED_HELM_CHART_NAME]
            - --sort-values-order=file
    ```
+
+Run `pre-commit autoupdate` to update all the hooks configured in the file.
 
 ## Step 3
 
