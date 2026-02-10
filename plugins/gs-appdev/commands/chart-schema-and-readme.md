@@ -108,7 +108,7 @@ documentation of the `helm-docs` project: https://github.com/norwoodj/helm-docs.
 
 Ask the user if they also want help with generation of missing comments for existing attributes. If the user
 confirms, analyze the full `values.yaml` file and generate comments for attributes that miss them. All the
-attributes are meant to be used in a context of a helm chart used to deploy and application on a kubernetes
+attributes are meant to be used in a context of a helm chart used to deploy an application on a kubernetes
 cluster. Be succinct and specific.
 
 At the same time, generate attributes' comments for the purpose of the
