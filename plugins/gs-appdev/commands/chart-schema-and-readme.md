@@ -31,30 +31,7 @@ Prepare files and pre-commit configuration.
 1. Make sure a git branch is checked out that is not the default branch, that is clean (no unstaged changes).
 2. Find all Helm charts in the `helm` directory.
 3. For each chart, check if it has a `values.yaml` file.
-4. For each chart directory, like `helm/my-chart/`, make sure that a file called
-   `helm/my-chart/README.md.gotmpl` exists. If it doesn't, initialize it by creating it with the following
-   content:
-
-   ```
-   {{ template "chart.header" . }}
-   {{ template "chart.deprecationWarning" . }}
-
-   {{ template "chart.badgesSection" . }}
-
-   {{ template "chart.description" . }}
-
-   {{ template "chart.homepageLine" . }}
-
-   {{ template "chart.maintainersSection" . }}
-
-   {{ template "chart.sourcesSection" . }}
-
-   {{ template "chart.requirementsSection" . }}
-
-   {{ template "chart.valuesSection" . }}
-   ```
-
-5. For each chart directory, like `helm/my-chart/`, make sure that a file called `.schema.yaml` exists in that
+4. For each chart directory, like `helm/my-chart/`, make sure that a file called `.schema.yaml` exists in that
    directory. If it doesn't, create it by templating the following content:
 
    ```
@@ -83,7 +60,7 @@ Prepare files and pre-commit configuration.
      additionalProperties: false
    ```
 
-6. Make sure a configuration for the `pre-commit` tool exists for each chart. If the `.pre-commit-config.yaml`
+5. Make sure a configuration for the `pre-commit` tool exists for each chart. If the `.pre-commit-config.yaml`
    file doesn't exist in the repository root - create an empty file. Then, append to this file the following
    snippet for each helm chart directory, like `helm/my-chart/`:
 
