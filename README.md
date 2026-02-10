@@ -11,6 +11,7 @@ Commands and skills for Giant Swarm application developers working with Helm cha
 **Commands:**
 
 - `/gs-appdev:chart-icon` - Specify a proper icon for a Helm chart
+- `/gs-appdev:chart-schema-and-readme` - Create helm chart configuration to use JSON schema and README.md generation tools based on values.yaml comments
 - `/gs-appdev:migrate-chart-metadata` - Migrate chart metadata to the recent OCI-compatible format
 - `/gs-appdev:upgrade-vendir-app` - Sync a GiantSwarm chart/bundle with upstream releases via vendir
 
