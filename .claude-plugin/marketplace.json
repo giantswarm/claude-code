@@ -22,6 +22,17 @@
       ]
     },
     {
+      "name": "gs-godev",
+      "source": "./plugins/gs-godev",
+      "description": "Commands and skills for Go development at Giant Swarm",
+      "version": "0.1.0",
+      "keywords": [
+        "go",
+        "golang",
+        "development"
+      ]
+    },
+    {
       "name": "gs-base",
       "source": "./plugins/gs-base",
       "description": "A general purpose Claude Code plugin for Giant Swarm platform engineers",

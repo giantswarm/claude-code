@@ -18,6 +18,22 @@ Commands and skills for Giant Swarm application developers working with Helm cha
 
 - **chart-icons**: Knowledge about application icons at Giant Swarm
 
+### gs-godev
+
+Commands and skills for Go development at Giant Swarm
+
+**Commands:**
+
+- `/gs-godev:cleanup-gomod-replace` - Clean up replacements in go.mod
+
+**Skills:**
+
+- **go-conventions**: Conventions for Go development at Giant Swarm
+
+**Agents:**
+
+- **code-cleaner**: A fast, cheap and straightforward agent for some chores in Go code
+
 ### gs-base
 
 A general purpose Claude Code plugin for Giant Swarm platform engineers
