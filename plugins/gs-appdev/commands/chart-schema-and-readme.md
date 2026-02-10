@@ -119,27 +119,31 @@ Prepare files and pre-commit configuration.
 
 ## Step 3
 
-Make sure the comments in `values.yaml` file for each chart detected in the `helm/` directory are formatted
-according to the documentation of the `helm-docs` project: https://github.com/norwoodj/helm-docs.
+Generate attribute comments for usage with `helm-docs` and `helm schema` tools. Analyze the documentation in
+the current project to understand the purpose and configuration options of the project. If the docs mention
+that the project is a fork of another repository with a helm chart, fetch also documentation for that source
+chart.
+
+Generate and fix the comments in `values.yaml` for the purpose of using `helm-docs`. Make sure the comments in
+`values.yaml` file for each chart detected in the `helm/` directory are formatted according to the
+documentation of the `helm-docs` project: https://github.com/norwoodj/helm-docs.
 
 Ask the user if he also wants help with generation of missing comments for existing attributes. If the user
 confirms, analyze the full `values.yaml` file and generate comments for attributes that miss them. All the
 attributes are meant to be used in a context of a helm chart used to deploy and application on a kubernetes
 cluster. Be succinct and specific.
 
+At the same time, generate attributes' comments for the purpose of the
+https://github.com/losisin/helm-values-schema-json tool. Read the docs available here to understand available
+annotations: https://github.com/losisin/helm-values-schema-json/blob/main/docs/README.md. Do not use
+annotations other than specified on this page. Assume the schema tool will be run in the `helm-docs`
+compatibility mode, so don't change existing helm-docs comments. Where possible, use
+`@schema $ref: $k8s/_definitions.json#` remote reference to reference a sub schema of a well known kubernetes
+definition. Add schema to every attribute in the `values.yaml` file. As the very minimum, add `@schema: type`
+attribute with the type based on the current value of the attribute. Make sure to always place the schema
+related comment one line above the `helm-docs` one, so the one starting with `# --`.
+
 ## Step 4
-
-Help generate attributes' comments for the purpose of the https://github.com/losisin/helm-values-schema-json
-tool. Read the docs available here to understand available annotations:
-https://github.com/losisin/helm-values-schema-json/blob/main/docs/README.md. Do not use annotations other than
-specified on this page. Assume the schema tool will be run in the `helm-docs` compatibility mode, so don't
-change existing helm-docs comments. Where possible, use `@schema $ref: $k8s/_definitions.json#` remote
-reference to reference a sub schema of a well known kubernetes definition. Add schema to every attribute in
-the `values.yaml` file. As the very minimum, add `@schema: type` attribute with the type based on the current
-value of the attribute. Make sure to always place the schema related comment one line above the `helm-docs`
-one, so the one starting with `# --`.
-
-## Step 5
 
 Run all the tools with `pre-commit`. Execute the command `pre-commit run -a`. The command might exit with
 error on the first run, when some of the files were modified by the executed tools. In that case run the
@@ -154,7 +158,7 @@ If they don't exist, add information to the main repository's `README.md` file a
 per-helm-chart `README.md` files that describe the configuration values and about the generated schema files
 that can be used to validate users' `values.yaml` files.
 
-## Step 6
+## Step 5
 
 Commit the changes. Do the following:
 
