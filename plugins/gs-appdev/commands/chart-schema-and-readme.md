@@ -1,6 +1,6 @@
 ---
 description:
-  Create helm chart configuration to use JSON schema and README.md generation tools that are based on
+  Create helm chart configuration to use JSON Schema and README.md generation tools that are based on
   values.yaml comments.
 ---
 
