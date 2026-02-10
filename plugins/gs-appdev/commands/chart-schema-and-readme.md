@@ -106,7 +106,7 @@ Generate and fix the comments in `values.yaml` for the purpose of using `helm-do
 `values.yaml` file for each chart detected in the `helm/` directory are formatted according to the
 documentation of the `helm-docs` project: https://github.com/norwoodj/helm-docs.
 
-Ask the user if he also wants help with generation of missing comments for existing attributes. If the user
+Ask the user if they also want help with generation of missing comments for existing attributes. If the user
 confirms, analyze the full `values.yaml` file and generate comments for attributes that miss them. All the
 attributes are meant to be used in a context of a helm chart used to deploy and application on a kubernetes
 cluster. Be succinct and specific.
