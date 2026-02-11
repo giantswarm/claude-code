@@ -26,15 +26,13 @@ Your goal is to help the user set up agentic access to Slack, so that they can u
 
     g. Copy the App ID
 
-    h. Install the `slack` CLI
-
-    i. Run the following command:
+    h. Run the following command:
 
         ```bash
         slack auth login --app <App ID>
         ```
 
-    j. Follow the instructions to log in and authorize the app. This means copying/pasting a command like `/slackauthticket YWZlZW...` into a Slack conversation. Use the direct message conversation with yourself for this. Copy the challenge code from the response message and paste it back into the terminal.
+    i. Follow the instructions to log in and authorize the app. This means copying/pasting a command like `/slackauthticket YWZlZW...` into a Slack conversation. Use the direct message conversation with yourself for this. Copy the challenge code from the response message and paste it back into the terminal.
 
 5. The user should now have the Slack MCP server installed and user auth information in `~/.slack/credentials.json`. Next we want to add the MCP server to the user's Claude MCP configuration, in STDIO mode. To do this, the user should run the following command in the terminal:
 
