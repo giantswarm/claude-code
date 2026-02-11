@@ -10,7 +10,7 @@ Commands for Account Engineers
 
 **Commands:**
 
-- `/gs-ae:customer-update` - Generate a overview over issues for the given customer repository over a configurable timeframe
+- `/gs-ae:customer-update` - Generate an overview over issues for the given customer repository over a configurable timeframe
 
 ### gs-appdev
 

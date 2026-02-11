@@ -1,10 +1,10 @@
 ---
-description: Generate a overview over issues for the given customer repository over a configurable timeframe
+description: Generate an overview over issues for the given customer repository over a configurable timeframe
 ---
 
 # Weekly Customer Update
 
-Generate a overview over issues for the given customer repository over a configurable timeframe.
+Generate an overview over issues for the given customer repository over a configurable timeframe.
 
 ## Input
 
@@ -15,9 +15,9 @@ Parse the arguments as follows:
 - The **second argument** is the timeframe (optional), e.g. `2w`, `4w`, `1m`, `3m`, `6m`. The format is `<number><unit>` where unit is `w` for weeks or `m` for months. **Default: `1w`** (1 week).
 
 Examples:
-- `/customer-update straumann` → repo=`giantswarm/straumann`, timeframe=1 week
-- `/customer-update straumann 2w` → repo=`giantswarm/straumann`, timeframe=2 weeks
-- `/customer-update straumann 3m` → repo=`giantswarm/straumann`, timeframe=3 months
+- `/customer-update acme` → repo=`giantswarm/acme`, timeframe=1 week
+- `/customer-update acme 2w` → repo=`giantswarm/acme`, timeframe=2 weeks
+- `/customer-update acme 3m` → repo=`giantswarm/acme`, timeframe=3 months
 - `/customer-update giantswarm/acme 6w` → repo=`giantswarm/acme`, timeframe=6 weeks
 
 If the repo argument is a full GitHub URL (e.g. `https://github.com/org/repo`), extract the `owner/repo` from it. If it's just `owner/repo`, use it directly. If it's just a repository name, use `giantswarm/repo`.
