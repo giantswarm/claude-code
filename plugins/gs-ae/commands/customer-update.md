@@ -1,3 +1,7 @@
+---
+description: Generate a overview over issues for the given customer repository over a configurable timeframe
+---
+
 # Weekly Customer Update
 
 Generate a overview over issues for the given customer repository over a configurable timeframe.

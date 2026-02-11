@@ -1,0 +1,8 @@
+{
+    "name": "gs-ae",
+    "description": "Commands for Account Engineers",
+    "version": "0.1.0",
+    "author": {
+        "name": "Giant Swarm GmbH"
+    }
+}
