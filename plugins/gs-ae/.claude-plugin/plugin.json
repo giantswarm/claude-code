@@ -1,0 +1,12 @@
+{
+    "name": "gs-ae",
+    "description": "Commands for Account Engineers",
+    "version": "0.1.0",
+    "author": {
+        "name": "Giant Swarm GmbH",
+        "email": "planeteers@giantswarm.io"
+    },
+    "keywords": ["account-engineering", "customer-updates", "github", "issues"],
+    "dependencies": {
+        "mcp_servers": ["github"]
+}

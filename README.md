@@ -4,6 +4,14 @@ Claude Code plugins for Giant Swarm engineers.
 
 ## Plugins
 
+### gs-ae
+
+Commands for Account Engineers
+
+**Commands:**
+
+- `/gs-ae:customer-update` - Generate an overview over issues for the given customer repository over a configurable timeframe
+
 ### gs-appdev
 
 Commands and skills for Giant Swarm application developers working with Helm charts
