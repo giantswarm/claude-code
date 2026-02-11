@@ -1,6 +1,6 @@
 # Weekly Customer Update
 
-Generate a customer issue update for the given GitHub repository over a configurable timeframe.
+Generate a overview over issues for the given customer repository over a configurable timeframe.
 
 ## Input
 
