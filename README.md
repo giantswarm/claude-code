@@ -54,6 +54,8 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - `/gs-base:init-github` - Initialize the GitHub MCP tools
 - `/gs-base:init-kubernetes` - Set up access to Kubernetes clusters
 - `/gs-base:init-search` - Set up search-mcp to access Docs, Intranet, and Handbook
+- `/gs-base:init-slack` - Set up agentic access to Slack
+- `/gs-base:issue-from-slack` - Create a Github issue from a Slack message
 - `/gs-base:migrate-to-runbook` - Migrate an ops-recipe to a runbook following Giant Swarm standards
 - `/gs-base:security-scorecard` - Check OSSF Security Scorecard for a given GitHub repository
 
