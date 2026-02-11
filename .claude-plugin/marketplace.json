@@ -9,6 +9,18 @@
   "strict": false,
   "plugins": [
     {
+      "name": "gs-ae",
+      "source": "./plugins/gs-ae",
+      "description": "Commands for Account Engineers",
+      "version": "0.1.0",
+      "keywords": [
+        "account-engineering",
+        "customer-updates",
+        "github",
+        "issues"
+      ]
+    },
+    {
       "name": "gs-appdev",
       "source": "./plugins/gs-appdev",
       "description": "Commands and skills for Giant Swarm application developers working with Helm charts",
