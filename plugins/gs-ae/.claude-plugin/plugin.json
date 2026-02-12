@@ -9,4 +9,5 @@
     "keywords": ["account-engineering", "customer-updates", "github", "issues"],
     "dependencies": {
         "mcp_servers": ["github"]
+    }
 }
