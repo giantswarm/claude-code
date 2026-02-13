@@ -63,6 +63,7 @@ A general purpose Claude Code plugin for Giant Swarm platform engineers
 - **fluxcd**: Best practices when working with Flux CD at Giant Swarm
 - **kubernetes**: To keep in mind when working with Kubernetes
 - **registries**: Working with container and OCI registries
+- **repository-creation**: How to create and set up new Giant Swarm repositories
 - **runbook-standards**: Quality standards and best practices for Giant Swarm runbooks
 - **software-engineering**: Software engineering base skills for Giant Swarm staff
 
