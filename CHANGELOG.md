@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 howver, we are **not** using semantic versioning, as users are encouraged to
 subscribe to the default branch instead. We structure this log by dates instead.
 
+## 2026-02-18
+
+### Added
+
+- Added `validate-json` GitHub workflow to validate modified JSON files in PRs
+
 ## 2026-02-10
 
 ### Changed
