@@ -87,6 +87,7 @@ jobs:
 
               echo "Pushing ${ref}"
               oras push "${ref}" \
+                --disable-path-validation \
                 --config "${config_file}:${config_media_type}" \
                 "${content_file}:${content_media_type}"
 
