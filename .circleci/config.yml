@@ -76,6 +76,14 @@ jobs:
             for dir in "${plugin_dirs[@]}"; do
               name="$(basename "${dir}")"
               ref="${REGISTRY}/${REGISTRY_PATH}/${name}:${tag}"
+              readme_file="${dir}README.md"
+              description=""
+              if [ -f "${readme_file}" ]; then
+                description="$(awk 'NF {print; exit}' "${readme_file}" | sed 's/^#\+\s*//')"
+              fi
+              if [ -z "${description}" ]; then
+                description="Klaus plugin ${name}"
+              fi
 
               echo "--- Packaging plugin: ${name} ---"
 
@@ -88,6 +96,12 @@ jobs:
               echo "Pushing ${ref}"
               oras push "${ref}" \
                 --disable-path-validation \
+                --annotation "io.giantswarm.klaus.type=plugin" \
+                --annotation "io.giantswarm.klaus.name=${name}" \
+                --annotation "io.giantswarm.klaus.version=${tag}" \
+                --annotation "org.opencontainers.image.title=${name}" \
+                --annotation "org.opencontainers.image.version=${tag}" \
+                --annotation "org.opencontainers.image.description=${description}" \
                 --config "${config_file}:${config_media_type}" \
                 "${content_file}:${content_media_type}"
 
