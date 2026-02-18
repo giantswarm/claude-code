@@ -1,0 +1,66 @@
+name: Publish Plugins
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+env:
+  REGISTRY: gsoci.azurecr.io
+  REGISTRY_PATH: giantswarm/klaus-plugins
+
+jobs:
+  publish:
+    name: Publish Plugin OCI Artifacts
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.ref_name }}
+      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install ORAS
+        uses: oras-project/setup-oras@v1
+
+      - name: Login to registry
+        run: |
+          set -euo pipefail
+          oras login "$REGISTRY" \
+            --username "$ACR_USERNAME" \
+            --password "$ACR_PASSWORD"
+
+      - name: Package and push plugins
+        run: |
+          set -euo pipefail
+
+          config_media_type="application/vnd.giantswarm.klaus-plugin.config.v1+json"
+          content_media_type="application/vnd.giantswarm.klaus-plugin.content.v1.tar+gzip"
+
+          for dir in plugins/*/; do
+            name="$(basename "$dir")"
+            ref="${REGISTRY}/${REGISTRY_PATH}/${name}:${TAG}"
+
+            echo "--- Packaging plugin: ${name} ---"
+
+            config_file="$(mktemp)"
+            printf '{"name":"%s","version":"%s"}' "$name" "$TAG" > "$config_file"
+
+            content_file="$(mktemp --suffix=.tar.gz)"
+            tar -czf "$content_file" -C "$dir" .
+
+            echo "Pushing ${ref}"
+            oras push "$ref" \
+              --config "$config_file:${config_media_type}" \
+              "$content_file:${content_media_type}"
+
+            rm -f "$config_file" "$content_file"
+            echo "Pushed ${ref}"
+          done

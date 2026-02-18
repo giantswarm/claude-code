@@ -1,0 +1,65 @@
+name: Auto Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  auto-release:
+    name: Auto Release
+    if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        env:
+          GIT_ACTOR: ${{ github.actor }}
+        run: |
+          git config user.name "$GIT_ACTOR"
+          git config user.email "${GIT_ACTOR}@users.noreply.github.com"
+
+      - name: Determine next version
+        id: version
+        run: |
+          set -euo pipefail
+
+          latest_tag="$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")"
+          latest_version="${latest_tag#v}"
+
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          next_patch=$((patch + 1))
+          next_version="v${major}.${minor}.${next_patch}"
+
+          echo "latest_tag=${latest_tag}"
+          echo "next_version=${next_version}"
+          echo "next_version=${next_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Create and push tag
+        env:
+          NEXT_VERSION: ${{ steps.version.outputs.next_version }}
+        run: |
+          set -euo pipefail
+          git tag "$NEXT_VERSION"
+          git push origin "$NEXT_VERSION"
+
+      - name: Create GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.version.outputs.next_version }}
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" \
+            --title "Release $TAG" \
+            --generate-notes \
+            --verify-tag
