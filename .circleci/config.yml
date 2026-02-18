@@ -17,7 +17,10 @@ jobs:
             set -euo pipefail
             curl -fsSL -o /tmp/oras.tar.gz "https://github.com/oras-project/oras/releases/download/v${ORAS_VERSION}/oras_${ORAS_VERSION}_linux_amd64.tar.gz"
             tar -xzf /tmp/oras.tar.gz -C /tmp oras
-            install /tmp/oras /usr/local/bin/oras
+            mkdir -p "${HOME}/bin"
+            install /tmp/oras "${HOME}/bin/oras"
+            echo 'export PATH="${HOME}/bin:${PATH}"' >> "${BASH_ENV}"
+            source "${BASH_ENV}"
             oras version
 
       - run:
