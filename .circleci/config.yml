@@ -96,9 +96,6 @@ jobs:
               echo "Pushing ${ref}"
               oras push "${ref}" \
                 --disable-path-validation \
-                --annotation "io.giantswarm.klaus.type=plugin" \
-                --annotation "io.giantswarm.klaus.name=${name}" \
-                --annotation "io.giantswarm.klaus.version=${tag}" \
                 --annotation "org.opencontainers.image.title=${name}" \
                 --annotation "org.opencontainers.image.version=${tag}" \
                 --annotation "org.opencontainers.image.description=${description}" \
